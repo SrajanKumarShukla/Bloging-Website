@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Place all CSS for header in this file -->
+    <link href='css\header.css' rel='stylesheet' type='text/css'>
+
+    <!-- Place all CSS for the rest of the elements in this file -->
+    <link href='css\index.css' rel='stylesheet' type='text/css'>
+
+	<!-- Place all CSS for fonts in this file -->
+    <link href='css\font.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <div id="main-container-div">
+        <!-- Header content -->
+        <div class="header">
+        <div id="logo">
+            <p id="scribbler">ScriBBler</p>
+            <p id="tag">Explore, Emagine, Create</p>
+        </div>         
+        <div id="in_up">
+            <button id="in_modal">Sign In</button>
+            <button id="up_modal">Sign Up</button>
+            <!-- sign in -->
+            <div id="sign_in_modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" id="close2">&times;</span>
+                        <h2>Welcome Back!</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <label>Username :</label>
+                            <input type="text" placeholder="e.g. sameer@gmail.com" id="username">
+                            <label> Password :</label>
+                            <input type="password" placeholder="e.g. ***********" id="password">
+                            <br>
+                            <button type="submit" id="in_button">Sign In</button><br>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <span>Not a member?</span><a href="#" id="nam">Sign Up</a>
+                    </div><br>
+                </div>
+            </div>
+              
+        </div>
+        </div>
+        <!-- post button are defined bellow    -->
+        <div class="postButtons">
+                <button id="all_post" class="post"><p>All Posts</p></button>
+                <button id="create_post" class="post"><p>Create Post</p></button>
+        </div>
+    </div>
+     <!-- sign in model -->
+    <div>
+        <div id="sign_in_modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" id="close2">&times;</span>
+                    <h2>Welcome Back!</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label>Username :</label>
+                        <input type="text" placeholder="e.g. sameer@gmail.com" id="username">
+                        <label> Password :</label>
+                        <input type="password" placeholder="e.g. ***********" id="password">
+                        <br>
+                        <button type="submit" id="in_button">Sign In</button><br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span>Not a member?</span><a href="#" id="nam">Sign Up</a>
+                </div><br>
+            </div>
+                  
+        </div>
+    </div>
+    <!-- sign up model -->
+    <div>
+        <div id="sign_up_modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" id="close1">&times;</span>
+                    <h2>Get Started</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label>Full Name :</label>
+                        <input type="text" placeholder="e.g. Sameer Sharma" id="full_name">
+                        <label>Username :</label>
+                        <input type="text" placeholder="e.g. sameer@gmail.com" id="username">
+                        <label> Password :</label>
+                        <input type="password" placeholder="e.g. ***********" id="password">
+                        <label>Confirm Password :</label>
+                        <input type="password" placeholder="e.g. ***********" id="confirm_password"><br>
+                        <button type="submit" id="up_button">Sign Up</button><br>
+                    </form>
+                </div>
+            </div>
+                  
+        </div>
+    </div>
+    <!-- create post model -->
+    <div>
+        <div id="create_post_modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" id="close3">&times;</span>
+                    <h2>Post Created!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- Place all Javascript for header in this file -->
+	<script src="js\header.js"></script>
+	<!-- Place all Javascript for rest of the elements in this file -->
+    <script src="js\index.js"></script>
+
+</body>
+</html>

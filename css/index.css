@@ -1,0 +1,29 @@
+body{
+   background: url('background.jpg');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center center;
+   background-size: cover;
+   margin: 0 !important;
+   background-size: 100% cover!important;
+   overflow:hidden;
+   display: block;
+   font-family: Arial, Helvetica, sans-serif;
+} 
+/* css used for the post button */
+.postButtons{
+   width:100%;
+   height:80vh;
+   display:flex;
+   justify-content: center;
+   align-items:center;
+   margin-top:-15vh;
+}
+/*common css used for both all post and create post */
+#all_post,#create_post{
+   margin:10px;
+   background-color:#ffd11a;
+   padding:0px 15px;
+   font-size:15px;
+   color:black;
+}
