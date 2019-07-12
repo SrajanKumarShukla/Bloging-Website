@@ -1,11 +1,9 @@
 .post {
-    position: relative;
-    width: 90%;
-    height: 20%;
+    width: 45%;
+    height: 160px;
     background: #fff;
     box-shadow:0 4px 10px 0 rgba(17, 4, 63, 0.2),0 4px 20px 0 rgba(79, 19, 97, 0.19);
     margin: 10px 10px 10px 20px;
-    float:left;
     border-radius: 15px;
 }
     
@@ -19,13 +17,15 @@
         color: #000;
 }
 .post-content {
-        width: 75%;           
+        width: 75%;    
+        height:160px;       
         display: table-cell;
         text-align: left;
         background-color: #E8E8E8;
         color: #000000;
         border-radius: 0 15px 15px 0;
-        padding: 0 20px;      
+        padding: 0 20px;   
+        position:relative;   
 }
 .post-title{
     font-family: 'Itim', cursive;
@@ -44,8 +44,9 @@
     font-size: 30px;
 }
 .post-desc{
-    height: 100px;
+    height: 53px;
     margin-bottom: 0 !important;
+    overflow:hidden;
 }
 
 body {
@@ -59,6 +60,236 @@ body {
 }
 .allPostsContainer {
     height: 100%;
-    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+    height:20vh;
+}
+#logo{
+    height:100%;
+    background-color: transparent;
+    padding:10px;
+}
+#in_up{
+    height:100%;
+    background-color: transparent;
+    padding:20px;
+    text-align: center;
+}
+#scribbler{
+    font-family: 'Caveat', cursive;
+    font-size:50px;
+    color:dodgerblue;
+    padding:0;
+    margin:0;
 
 }
+#tag{
+    font-family: 'Parisienne', cursive;
+    font-size:20px;
+    margin:0;
+}
+#up_modal,#in_modal{
+    color:white;
+    background-color: dodgerblue;
+    padding:10px;
+    font-size:15px;
+    margin:5px;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0px;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    text-align:left;
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: dodgerblue;
+    color: white;
+    text-align:center;
+  }
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: white;
+    color: black;
+    text-align:center;
+    text-decoration: none;
+  }
+  .modal-body {padding: 10px 26px;text-align:center;}
+  
+  form{
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      width:30%;
+      z-index:5;
+      width:100%;
+      margin-bottom:0;
+  }
+  legend{
+      color: dodgerblue;
+      font-size:30px;
+      text-align: center;
+  }
+  h1{
+      text-align: center;
+      margin-bottom:5px;
+      color:dodgerblue;
+  }
+  label{
+      font-size:20px;
+      margin:10px 0 2px 0;
+      color:dodgerblue;
+  }
+ #in_button,#up_button{
+      margin-top:10px;
+      margin-bottom:0px;
+      border:none;
+      background-color:dodgerblue;
+      padding:5px;
+      font-size:20px;
+      color:white;
+      cursor:pointer;
+  }
+  input{
+      height:30px;
+      padding-left:7px;
+      border-bottom:1px solid dodgerblue;
+      border-top:none;
+      border-left:none;
+      border-right:none;
+      background-color:rgb(255, 255, 230,0);
+  }
+  input:focus{
+      outline:none;
+      background-color:none;
+  }
+  #bubble_1{
+      border-radius:50%;
+      width:15VW;
+      height:15VW;
+      background-color:dodgerblue;
+      opacity:0.1;
+      position:absolute;
+      left:37%;
+      top:35%;
+      z-index:2;
+  }
+  #bubble_2{
+      border-radius:50%;
+      width:15VW;
+      height:15VW;
+      background-color:dodgerblue;
+      opacity:0.1;
+      position:absolute;
+      left:47%;
+      top:35%;
+      z-index:2;
+  }
+  #nam{
+    text-decoration:none;
+    color:blue;
+    cursor:pointer;
+}
+  @media (max-width:500px)
+  {
+      .modal-content{
+          width:80%;
+      }
+      .modal{
+          padding-top:50px;
+      }
+  }
+  
+  .trash{
+      position:absolute;
+      top:15px;
+      right:15px;
+      cursor:pointer;
+      transition:0.3s;
+  }
+  #yes{
+      border:none;
+      background-color:red;
+      color:white;
+  }
+  #no{
+      border:none;
+      background-color:#4CAF50;
+      color:white;
+  }
+  #yes,#no{
+      cursor:pointer;
+      padding:10px 20px;
+      font-size:15px;
+      margin:10px;
+  }
+  .trash:hover
+  {
+      color:red;
+      font-size:30px;
+  }
+  .full_content{
+    font-size:30px;
+    position: absolute;
+    right:20px;
+    bottom:15px;
+    cursor:pointer;
+    text-decoration:none;
+    color:black;
+  }
