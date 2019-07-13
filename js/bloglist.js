@@ -19,3 +19,7 @@ var home=document.getElementById("logo");
 home.onclick=function(){
     window.location.href="../index.html";
 }
+var btn3 = document.getElementById("up_button");
+btn3.onclick = function(){
+    modal1.style.display = "block";
+}
