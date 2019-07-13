@@ -1,80 +1,76 @@
-//edit and save button
-var edit_save=document.getElementById("edit_save");
-var blogBody=document.getElementById("blogBody");
-edit_save.onclick=function(){
-    if(edit_save.innerHTML=="Edit"){
-    edit_save.innerHTML="Save";
-    blogBody.innerHTML="<textarea "+"id="+"text_area"+">"+blogBody.innerHTML+"</textarea>";
-    }else{
-        edit_save.innerHTML="Edit";
-        blogBody.innerHTML=document.getElementById("text_area").value;
-    }
+// Makes the Save Button invisible by default
+var btn = document.getElementById('save');
+btn.style.display = "none";
+
+/*  editContent() makes the blogs main content and heading
+    editable to the user and outlines the editable portion
+ */
+function editContent(){
+    // Makes the edit button invisible
+    var edit_btn = document.getElementById('edit');
+    edit_btn.style.display = "none";
+    // Makes the save button visible
+    var save_btn = document.getElementById('save');
+    save_btn.style.display = "";
+    // Puts a border to the content and heading and make them editable
+    var para = document.getElementById('blogBody')
+    para.style.border = "3px solid gray";
+    para.setAttribute('contenteditable','true')
+
+    var para = document.getElementById('blogTitleNew')
+    para.style.border = "3px solid gray";
+    para.setAttribute('contenteditable','true')
+
 }
 
-//Like button
-var like=document.getElementById("like");
-var person_count=document.getElementById("person_count");
-like.onclick=function(){
-    like.innerHTML="Liked!";
-    document.getElementById("first_person").style.display="none";
-    if(person_count.innerHTML==""){
-        person_count.innerHTML="1 person likes this!";
-    }
-    else{
-        var n=parseInt(person_count.innerHTML);
-        if(person_count.innerHTML=="1 person likes this!")
-        person_count.innerHTML=(n+1)+" people have liked this!";
-        else
-        person_count.innerHTML=(n+1)+" people have liked this!";
+/*  saveContent() makes the blogs main content and heading
+    un-editable to the user, saves the changes
+    and remmoves the outlines of editable portion
+ */
+function saveContent(){
+    // Makes the save button invisible
+    var edit_btn = document.getElementById('save');
+    edit_btn.style.display = "none";
+    // akes the edit button visible
+    var save_btn = document.getElementById('edit');
+    save_btn.style.display = "";
+    // Removes the border of the content and heading and make them un-editable
+    var para = document.getElementById('blogBody')
+    para.style.border = "none";
+    para.setAttribute('contenteditable','false')
 
-        
-    }
-}
-//comment
-var comment_btn=document.getElementById("comment_button");
-var comment_inp=document.getElementById("comment_input");
-var comment_box=document.getElementById("comment_box");
-comment_btn.onclick=function(){
-    var val=comment_inp.value;
-    if(val!=""){
-        comment_box.style.display="block";
-        comment_box.innerHTML+="<p id='comment_para'>"+val+"</p>";
-}
+    var para = document.getElementById('blogTitleNew')
+    para.style.border = "none";
+    para.setAttribute('contenteditable','false')
 }
 
-//singn in and sign up modal
-var modal1 = document.getElementById("sign_up_modal");
-var modal2 = document.getElementById("sign_in_modal");
-var NAM = document.getElementById("nam");//Not a member
-// Get the button that opens the modal
-var btn1 = document.getElementById("up_modal");
-var btn2 = document.getElementById("in_modal");
-// Get the <span> element that closes the modal
-var span1 = document.getElementById("close1");
-var span2 = document.getElementById("close2");
-// When the user clicks the button, open the modal 
-btn1.onclick = function() {
-  modal1.style.display = "block";
+/* like() counts the number of likes on a post
+   and displays them on the page
+*/
+var likes = 0
+function like(){
+    // Fetch the like button action
+    var btn = document.getElementById('like');
+    // When Clicked changes the innerHTML of the button
+    btn.innerHTML = 'Liked!';
+    // Shows the number of likes and change the innerTEXT to nuber of likes
+    var content = document.getElementById('liker');
+    likes = likes + 1
+    content.innerHTML = `${likes} person likes this!`;
 }
 
-// When the user clicks on <span> (x), close the modal
-span1.onclick = function() {
-  modal1.style.display = "none";
-}
-
-btn2.onclick = function() {
-    modal2.style.display = "block";
-  }
-  
-  // When the user clicks on <span> (x), close the modal
-span2.onclick = function() {
-    modal2.style.display = "none";
-}
-NAM.onclick = function() {
-    modal1.style.display = "block";
-  }
-//onclicking scribber logo it leads to homepage
-var home=document.getElementById("logo");
-home.onclick=function(){
-    window.location.href="../index.html";
+/*  commetn() fetchs the new comment from comment field
+    and places that on the top of comment section
+*/
+function comment(){
+    // Fetch the new comment value
+    var cmnt = document.getElementById('addComment').value;
+    var holder= `<p class="newComment">${cmnt}</p>` // New coment template
+    // Fetch the comment holder div
+    var allComment = document.getElementById("newCommentHolder");
+    // Add the new comment to the comment holder
+    allComment.innerHTML = holder + allComment.innerHTML;
+    // Reset the value of the comment holder
+    document.getElementById('addComment').value = "";
+    
 }

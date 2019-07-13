@@ -1,12 +1,17 @@
+/* Styles for the blog post content */
+/* Styles for the blog post title */
 .blogTite {
     font-size: 150%;
     font-family: 'Abel', sans-serif;
     font-weight: bold;
 }
+
+/* Styles for the blog post main content */
 .blogText {
      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
+
+/* Styles for the blog post author*/
 .blogAuthor {
     padding: 0px 0px 0px 10px;
     font-family: 'Niconne', cursive;
@@ -16,4 +21,119 @@
 
 }
 
-/* Set a style for all the remaining elements like Like button, Edit button, Comment button and so on. */
+/* Styles for the input fields on the modals
+   on the main header
+*/
+.inp{
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #f1f1f1;
+    display: block;
+    width:98%;
+    height:44px;
+ }
+ 
+ /* Styles for the button on the main header of the page */
+ .postButtons {
+    width:300px;
+    height:200px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-100px 0 0 -150px;
+ }
+ 
+/* Style for the main header Modal Content */
+.modal-content {
+    position: relative;
+    top: -34px;
+    color: black;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 44%;
+}
+  
+/* The Close Button on modals */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styles for the Blog Content*/
+#blogBody{
+    text-align: justify;
+    padding: 7px;
+    border: none;
+    width: 100%;
+    height: auto;
+}
+
+/* Styles for the blog title */
+#blogTitleNew{
+    text-align: center;
+}
+
+/* Styles for the edit and save button on the blog post */
+.edit-save{
+    background-color: #f2295b;
+    color: white;
+    font-weight: 500;
+    float: right;
+    width: 120px;
+    box-shadow: #f2295b 0 3px 5px;
+}
+
+/* Styles for the like button on blog post */
+#like{
+    background-color: #f2295b;
+    color: white;
+    font-weight: 500;
+    width: 120px;
+    box-shadow: #f2295b 0 3px 5px;
+}
+
+/* Styles for the comment button */
+#commentBtn{
+    background-color: #f2295b;
+    color: white;
+    font-weight: 500;
+    width: 120px;
+    box-shadow: #f2295b 0 3px 5px;
+}
+
+/* Styles for the whole blog post content area*/
+#main{
+    margin: 20px 65px 20px 65px;
+}
+
+/* Styles for the textarea to add new comment */
+#addComment{
+    display: block;
+    width: 75%;    
+}
+
+/* Styles for the comment holder section */
+#newCommentHolder{
+    width: 100%;
+    height: auto;
+    background-color: #b9b3b3;
+    padding: 10px;
+}
+
+/* Styles for the new comment */
+.newComment{
+    padding: 7px;
+    text-align: justify;
+    background-color: white;
+}

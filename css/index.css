@@ -8,32 +8,90 @@ body{
    background-size: 100% cover!important;
    overflow:hidden;
    display: block;
-   font-family: Arial, Helvetica, sans-serif;
 } 
-/* css used for the post button */
-.postButtons{
-   width:100%;
-   height:80vh;
-   display:flex;
-   justify-content: center;
-   align-items:center;
-   margin-top:-15vh;
-}
-/*common css used for both all post and create post */
-#all_post,#create_post{
-   margin:10px;
-   background-color:#ffd11a;
-   padding:0px 15px;
-   font-size:15px;
-   color:black;
-}
-.create_post_model
-{
-   width: 100%;
-   height:100%;
-}
-.text1{
-   width: 50%;
-   height:100px;
 
+/* styles the input fields in the modals */
+.inp{
+   border: none;
+   outline: none;
+   padding: 10px;
+   background-color: #f1f1f1;
+   display: block;
+   width:98%;
+   height:44px;
+}
+
+/* Styles the main heading buttons container
+   on the right for
+   sign in and sign up modals 
+*/
+.postButtons {
+   width:300px;
+   height:200px;
+   position:absolute;
+   left:50%;
+   top:50%;
+   margin:-100px 0 0 -150px;
+}
+
+
+button.mainButtons {
+   width: 100px;
+   background: initial;
+   padding: 10px;
+   cursor: pointer;
+   font-weight: 500;
+   font-size: 90%;
+   font-weight: 500;
+   background: yellow;
+   color: #000;  
+   opacity: 1;             
+   margin: 10px 10px 0px 0px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the link on the main body */
+a button.mainButtons{
+   text-decoration: none;
+   color: black;
+   font-weight: 500;
+
+}
+
+  /* Style The Modal Content */
+  .modal-content {
+   position: relative;
+   top: -34px;
+   background-color: #fefefe;
+   margin: auto;
+   padding: 20px;
+   border: 1px solid #888;
+   width: 44%;
+ }
+ 
+ /* The Close button on the modal*/
+ .close {
+   color: #aaaaaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+ }
+ 
+.close:hover,
+.close:focus {
+   color: #000;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+/* Style for the content field in the createPostModal */
+#createPost{
+   width: 98%;
+   background-color: #f1f1f1;
+   height: auto;
+   border: none;
+   outline: none;
+   padding: 10px;
+   display: block;
+   resize: none;
 }

@@ -1,35 +1,25 @@
-//on clicking all post button it leads to bloglist.html
-var all_post=document.getElementById("all_post");
-all_post.onclick=function(){
-  window.location.href="html/bloglist.html";
+// Get the create post modal
+var createPostModal = document.getElementById("createPostModal");
+
+// Get the button that opens the create post modal
+var btn3 = document.getElementById("createPostBtn");
+
+// Get the <span> element that closes the create post modal
+var span3 = document.getElementById("closePost");
+
+// When the user clicks the button, open the create post modal 
+btn3.onclick = function () {
+    createPostModal.style.display = "block";
 }
-//create post
-var create_post=document.getElementById("create_post");
-var modal1 = document.getElementById("sign_up_modal");
-var span1 = document.getElementById("close1");
-var btn3 = document.getElementById("up_button");
-create_post.onclick = function() {
-  modal1.style.display = "block";
+
+// When the user clicks on <span> (x), close the create post modal
+span3.onclick = function () {
+    createPostModal.style.display = "none";
 }
-btn3.onclick = function(){
-  modal1.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-span1.onclick = function() {
-  modal1.style.display = "none";
-}
-//on clicking the logo it leads to homepage
-var home=document.getElementById("logo");
-home.onclick=function(){
-    window.location.href="index.html";
-}
-//crete post
-var create_post=document.getElementById("create_post");
-var post_modal = document.getElementById("create_post_modal");
-create_post.onclick=function(){
-  post_modal.style.display="block";
-}
-var span3 = document.getElementById("close3");
-span3.onclick = function() {
-  post_modal.style.display = "none";
+
+// When the user clicks anywhere outside of the create post modal, close it
+window.onclick = function (event) {
+    if (event.target == createPostModal) {
+        createPostModal.style.display = "none";
+    }
 }

@@ -1,12 +1,24 @@
+/* Create flex for posts */
+#one,#two,#three{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style and position the blog posts */
 .post {
-    width: 45%;
-    height: 160px;
+    position: relative;
+    width: 90%;
+    height: 20%;
+    flex: 1;
     background: #fff;
     box-shadow:0 4px 10px 0 rgba(17, 4, 63, 0.2),0 4px 20px 0 rgba(79, 19, 97, 0.19);
-    margin: 10px 10px 10px 20px;
+    margin: 20px 50px 20px 50px;
+    float:left;
     border-radius: 15px;
 }
     
+/* Style the blog author name */
 .post-left {
         width: 15%;            
         max-width: 15%;
@@ -16,24 +28,31 @@
         font-weight: bold;
         color: #000;
 }
+
+/* Style the blog post main content */
 .post-content {
-        width: 75%;    
-        height:160px;       
+        width: 75%;           
         display: table-cell;
         text-align: left;
         background-color: #E8E8E8;
         color: #000000;
+        margin-top: 5px;
         border-radius: 0 15px 15px 0;
-        padding: 0 20px;   
-        position:relative;   
+        padding: 0 20px 20px 20px;      
 }
+
+/* Style the main heading of the blog post */
 .post-title{
     font-family: 'Itim', cursive;
     font-weight: bold;
     color: #2b312b;
     font-size: 25px;
     height: 25px;
-    }
+    padding-bottom: 20px;
+    margin-bottom: 7px;
+}
+
+/* Style the Bin and ellipsis button on the blog post */
 .post-more {
     float: right;
     cursor: pointer;
@@ -43,12 +62,22 @@
     padding-bottom: 10px;
     font-size: 30px;
 }
+
+/* Styles the blog post main content */
 .post-desc{
-    height: 53px;
+    height: 100px;
     margin-bottom: 0 !important;
-    overflow:hidden;
+    text-overflow: none;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
+/* Stles the last blog post on the blog list */
+#last{
+    flex: 0.46;
+}
+
+/* Styles the Bloglist page body */
 body {
     height: 100%;
     width: 100%;
@@ -58,238 +87,84 @@ body {
     background-color: orange;
     background-size: 2000% 2000%;
 }
+
+/* Styles the Blog post container */
 .allPostsContainer {
     height: 100%;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
 }
 
-.header{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width:100%;
-    height:20vh;
-}
-#logo{
-    height:100%;
-    background-color: transparent;
-    padding:10px;
-}
-#in_up{
-    height:100%;
-    background-color: transparent;
-    padding:20px;
-    text-align: center;
-}
-#scribbler{
-    font-family: 'Caveat', cursive;
-    font-size:50px;
-    color:dodgerblue;
-    padding:0;
-    margin:0;
-
-}
-#tag{
-    font-family: 'Parisienne', cursive;
-    font-size:20px;
-    margin:0;
-}
-#up_modal,#in_modal{
-    color:white;
-    background-color: dodgerblue;
-    padding:10px;
-    font-size:15px;
-    margin:5px;
-}
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
+/* Style for the Modals on the page header */
+/* Style for the input fields in the modals */
+.inp{
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #f1f1f1;
+    display: block;
+    width:98%;
+    height:44px;
+ }
+ 
+/* Style for the modal button holder */
+ .postButtons {
+    width:300px;
+    height:200px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-100px 0 0 -150px;
+ }
+ 
+ 
+/* Main Header Modal Content */
+.modal-content {
     position: relative;
+    top: -34px;
+    color: black;
     background-color: #fefefe;
     margin: auto;
-    padding: 0px;
+    padding: 20px;
     border: 1px solid #888;
-    width: 40%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    text-align:left;
-  }
+    width: 44%;
+}
   
-  /* Add Animation */
-  @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-  }
-  
-  @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-  }
-  
-  /* The Close Button */
-  .close {
-    color: white;
+/* The Close Button on Modals */
+.close {
+    color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
   
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
-  
-  .modal-header {
-    padding: 2px 16px;
-    background-color: dodgerblue;
-    color: white;
-    text-align:center;
-  }
-  .modal-footer {
-    padding: 2px 16px;
-    background-color: white;
-    color: black;
-    text-align:center;
-    text-decoration: none;
-  }
-  .modal-body {padding: 10px 26px;text-align:center;}
-  
-  form{
-      display: flex;
-      flex-direction:column;
-      justify-content: center;
-      width:30%;
-      z-index:5;
-      width:100%;
-      margin-bottom:0;
-  }
-  legend{
-      color: dodgerblue;
-      font-size:30px;
-      text-align: center;
-  }
-  h1{
-      text-align: center;
-      margin-bottom:5px;
-      color:dodgerblue;
-  }
-  label{
-      font-size:20px;
-      margin:10px 0 2px 0;
-      color:dodgerblue;
-  }
- #in_button,#up_button{
-      margin-top:10px;
-      margin-bottom:0px;
-      border:none;
-      background-color:dodgerblue;
-      padding:5px;
-      font-size:20px;
-      color:white;
-      cursor:pointer;
-  }
-  input{
-      height:30px;
-      padding-left:7px;
-      border-bottom:1px solid dodgerblue;
-      border-top:none;
-      border-left:none;
-      border-right:none;
-      background-color:rgb(255, 255, 230,0);
-  }
-  input:focus{
-      outline:none;
-      background-color:none;
-  }
-  #bubble_1{
-      border-radius:50%;
-      width:15VW;
-      height:15VW;
-      background-color:dodgerblue;
-      opacity:0.1;
-      position:absolute;
-      left:37%;
-      top:35%;
-      z-index:2;
-  }
-  #bubble_2{
-      border-radius:50%;
-      width:15VW;
-      height:15VW;
-      background-color:dodgerblue;
-      opacity:0.1;
-      position:absolute;
-      left:47%;
-      top:35%;
-      z-index:2;
-  }
-  #nam{
-    text-decoration:none;
-    color:blue;
-    cursor:pointer;
 }
-  @media (max-width:500px)
-  {
-      .modal-content{
-          width:80%;
-      }
-      .modal{
-          padding-top:50px;
-      }
-  }
-  
-  .trash{
-      position:absolute;
-      top:15px;
-      right:15px;
-      cursor:pointer;
-      transition:0.3s;
-  }
-  #yes{
-      border:none;
-      background-color:red;
-      color:white;
-  }
-  #no{
-      border:none;
-      background-color:#4CAF50;
-      color:white;
-  }
-  #yes,#no{
-      cursor:pointer;
-      padding:10px 20px;
-      font-size:15px;
-      margin:10px;
-  }
-  .trash:hover
-  {
-      color:red;
-      font-size:30px;
-  }
-  .full_content{
-    font-size:30px;
-    position: absolute;
-    right:20px;
-    bottom:15px;
-    cursor:pointer;
-    text-decoration:none;
-    color:black;
-  }
+
+/* The Yes button on the delete blog post modal */
+ #pos{
+	background-color: red;
+    display: inline-block;
+    color: white;
+    float: left;
+    border: none;
+    width: 100px;
+    padding: 8px;
+    height: 30px;
+}
+
+/* The No button on the delete blog post modal */
+#neg{
+	background-color: green;
+    float: right;
+    border: none;
+    display: inline-block;
+    color: white;
+    width: 55px;
+    width: 100px;
+    height: 30px;
+    padding: 8px;
+}
